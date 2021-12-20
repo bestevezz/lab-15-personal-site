@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style_pages.css">
+</head>
+
+<body>
+    <div id="navbar">
+        <a href="index.html">Home</a>
+        <a href="aboutme.html">About Me</a>
+        <a href="myportfolio.html">My Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <center>
+        <h1>Contact Information</h1>
+    </center>
+    <center>
+        <div id="fourth">
+            <h2>
+                Number & Email
+            </h2>
+            <h3>646-XXX-XXXX</h3>
+            <h3>bryan.estevez@mail.citytech.cuny.edu</h3>
+        </div>
+    </center>
+    <canvas id="sketch" width="800" height="600" style="border: 1px solid rgb(252, 250, 250);">
+    </canvas>
+    <script>
+        src = "navbar.v01.js"
+
+        document.addEventListener('DOMContentLoaded', main);
+
+        var sketch;
+        var context;
+
+        function main() {
+            sketch = document.getElementById('sketch');
+            context = sketch.getContext("2d");
+            context.fillStyle = "#B884DB";
+            sketch.addEventListener("click", function (event) {
+                draw_circle(event.x, event.y, 50);
+            });
+        }
+        function draw_circle(x, y, r) {
+            context.beginPath();
+            context.arc(x, y, r, 0, 2 * Math.PI, true);
+            context.closePath();
+            context.fill();
+        }
+
+    </script>
+</body>
+
+</html>
